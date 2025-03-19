@@ -1,8 +1,5 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    {{ JSON.stringify(loginUserStore.loginUser, null, 2) }}
-  </div>
+  <div id="noAuthPage">无权限</div>
 </template>
 
 <script setup lang="ts">
