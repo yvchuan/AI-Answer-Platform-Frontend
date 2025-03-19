@@ -1,4 +1,5 @@
 <template>
+  <PictureUploader biz="user_avatar" />
   <div id="app">
     <template v-if="route.path.startsWith('/user')">
       <router-view />
@@ -11,15 +12,23 @@
 
 <script setup lang="ts">
 import BasicLayout from "@/layouts/BasicLayout.vue";
-import UserLayout from "@/layouts/UserLayout.vue";
 import { useRoute } from "vue-router";
-import { getLoginUserUsingGet } from "@/api/userController";
-import { useLoginUserStore } from "@/store/userStore";
+import { on } from "@arco-design/web-vue/es/_utils/dom";
+import { onMounted } from "vue";
+import PictureUploader from "@/components/PictureUploader.vue";
 
 const route = useRoute();
 
-const loginUserStore = useLoginUserStore();
-loginUserStore.fetchLoginUser();
+/**
+ * 全局初始化函数, 有全局单次调用的代码, 都可以写在这里
+ */
+const doInit = () => {
+  console.log("hello, 欢迎来到我的项目");
+};
+
+onMounted(() => {
+  doInit();
+});
 </script>
 
 <style scoped></style>
