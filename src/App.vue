@@ -1,5 +1,5 @@
 <template>
-  <PictureUploader biz="user_avatar" />
+  <!--  <PictureUploader biz="user_avatar" />-->
   <div id="app">
     <template v-if="route.path.startsWith('/user')">
       <router-view />

@@ -1,12 +1,11 @@
-import { computed, ref } from "vue";
 import { defineStore } from "pinia";
+import { ref } from "vue";
 import { getLoginUserUsingGet } from "@/api/userController";
 import ACCESS_ENUM from "@/access/accessEnum";
 
 /**
- * 登陆用户信息全局状态
+ * 登录用户信息全局状态
  */
-
 export const useLoginUserStore = defineStore("loginUser", () => {
   const loginUser = ref<API.LoginUserVO>({
     userName: "未登录",
